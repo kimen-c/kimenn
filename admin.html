@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09090d"><title>NOHMEN — Admin</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="admin.css"><script type="module" src="admin.js"></script></head>
+<body class="admin-page">
+<header class="site-header"><a class="brand" href="index.html">NOHMEN<span>.</span></a><a class="nav-link" href="index.html">← Back to portfolio</a></header>
+<main class="admin-wrap">
+  <div class="admin-title"><p class="section-index">PRIVATE AREA</p><h1>Admin <span class="gradient-text">dashboard.</span></h1><p>Kelola project dan pesan yang masuk ke portfolio.</p></div>
+  <section class="admin-card" id="loginPanel"><h2>Sign in</h2><p class="admin-muted">Login menggunakan akun yang sudah terdaftar di Supabase Auth.</p><form id="loginForm"><label>Email</label><input type="email" id="loginEmail" required autocomplete="username"><label>Password</label><input type="password" id="loginPassword" required autocomplete="current-password"><button class="button button-primary" type="submit">Login ↗</button><p class="form-status" id="loginStatus" role="status"></p></form></section>
+  <section id="dashboard" hidden>
+    <div class="admin-toolbar"><div><h2>Dashboard</h2><p class="admin-muted" id="adminEmail"></p></div><button class="button button-ghost" id="logoutButton">Logout</button></div>
+    <div class="admin-columns">
+      <section class="admin-card"><h2 id="editorTitle">Add project</h2><form id="projectForm"><input type="hidden" id="projectId"><label>Project title</label><input id="projectTitle" maxlength="100" required><label>Description</label><textarea id="projectDescription" rows="3" maxlength="500"></textarea><label>Category</label><input id="projectCategory" maxlength="60" placeholder="Web Design, Development..."><label>Cover image URL (optional)</label><input id="projectCover" type="url" placeholder="https://..."><label>Project URL (optional)</label><input id="projectUrl" type="url" placeholder="https://..."><label class="check-label"><input id="projectPublished" type="checkbox" checked> Publish project</label><div class="button-row"><button class="button button-primary" type="submit">Save project</button><button class="button button-ghost" type="button" id="resetProject">Clear</button></div><p class="form-status" id="projectStatus" role="status"></p></form></section>
+      <section class="admin-card"><h2>Projects</h2><div id="adminProjects" class="admin-list"><p class="admin-muted">Loading...</p></div></section>
+    </div>
+    <section class="admin-card messages-card"><div class="admin-toolbar"><h2>Inbox messages</h2><button class="button button-ghost" id="refreshMessages">Refresh</button></div><div id="adminMessages" class="admin-list"><p class="admin-muted">Loading...</p></div></section>
+  </section>
+</main>
+<footer class="site-footer section-shell"><a class="brand" href="index.html">NOHMEN<span>.</span></a><p>Private admin dashboard.</p><div><span>© <span id="year"></span> NOHMEN</span></div></footer>
+</body></html>
